@@ -11,9 +11,9 @@ interface HeroSectionProps {
 export default function HeroSection({ onLearnMore }: HeroSectionProps) {
   return (
     <section
-      className="relative min-h-[600px] flex items-center justify-center text-center text-white"
+      className="relative min-h-[700px] flex items-center justify-center text-center text-white"
       style={{
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/hero-background.png)",
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/プライドジャパン47_250531_9.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
