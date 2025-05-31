@@ -1,7 +1,7 @@
 "use client"
 
 import { Star } from "lucide-react"
-import { Button } from "./ui/button"
+import { Button } from "~/components/ui/button"
 
 interface HeaderProps {
   onNavigate?: (section: string) => void
@@ -22,7 +22,7 @@ export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Star className="w-6 h-6 text-pink-500 fill-pink-500" />
-          <span className="text-lg font-semibold">Rising Stars</span>
+          <span className="text-lg font-semibold">Banars</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">

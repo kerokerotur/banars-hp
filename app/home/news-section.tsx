@@ -1,7 +1,7 @@
 "use client"
 
+import { Button } from "~/components/ui/button"
 import NewsCard from "./news-card"
-import { Button } from "./ui/button"
 
 interface NewsSectionProps {
   onViewAllNews?: () => void
@@ -13,9 +13,9 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
     {
       id: "1",
       date: "June 15, 2024",
-      title: "Rising Stars Win Championship Game",
+      title: "Banars Win Championship Game",
       description:
-        "The Rising Stars defeated the Titans in a thrilling championship game, securing their place as league champions.",
+        "The Banars defeated the Titans in a thrilling championship game, securing their place as league champions.",
       imageUrl: "/placeholder.svg?height=200&width=300",
     },
     {
@@ -31,7 +31,7 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
       date: "April 5, 2024",
       title: "Spring Training Camp a Success",
       description:
-        "The Rising Stars completed a successful spring training camp, focusing on skill development and team building.",
+        "The Banars completed a successful spring training camp, focusing on skill development and team building.",
       imageUrl: "/placeholder.svg?height=200&width=300",
     },
   ]

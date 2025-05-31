@@ -1,6 +1,7 @@
 "use client"
 
-import { Button } from "./ui/button"
+import { Button } from "~/components/ui/button"
+
 
 
 interface HeroSectionProps {
@@ -19,7 +20,7 @@ export default function HeroSection({ onLearnMore }: HeroSectionProps) {
       }}
     >
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Rising Stars Baseball Club</h1>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">Banars Baseball Club</h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
           Empowering young athletes through baseball, fostering teamwork, skill development, and a passion for the game.
         </p>

@@ -49,7 +49,7 @@ export default function Footer({ onSocialClick, onLinkClick }: FooterProps) {
           </div>
         </div>
 
-        <div className="text-center text-gray-400 text-sm">© 2024 Rising Stars Baseball Club. All rights reserved.</div>
+        <div className="text-center text-gray-400 text-sm">© 2024 Banars Baseball Club. All rights reserved.</div>
       </div>
     </footer>
   )

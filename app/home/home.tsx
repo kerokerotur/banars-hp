@@ -1,10 +1,11 @@
 "use client"
 
-import AboutSection from "~/components/about-section"
-import Footer from "~/components/footer"
-import Header from "~/components/header"
-import HeroSection from "~/components/hero-section"
-import NewsSection from "~/components/news-section"
+import AboutSection from "./about-section"
+import Footer from "./footer"
+import Header from "./header"
+import HeroSection from "./hero-section"
+import NewsSection from "./news-section"
+
 
 export function HomePage() {
   const handleNavigate = (section: string) => {
