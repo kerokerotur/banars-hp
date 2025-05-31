@@ -1,7 +1,4 @@
-"use client"
-
-import { Button } from "react-day-picker"
-
+import { Button } from "~/components/ui/button"
 
 export interface Player {
   id: string
@@ -20,7 +17,7 @@ interface PlayerCardProps {
 
 export default function PlayerCard({ player, onViewProfile, className = "" }: PlayerCardProps) {
   return (
-    <div className={`bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-colors ${className}`}>
+    <div className={`bg-[#2C1220] rounded-lg p-6 hover:bg-gray-750 transition-colors ${className}`}>
       <div className="flex items-center gap-4 mb-4">
         <div className="relative">
           <img

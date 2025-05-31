@@ -12,14 +12,13 @@ interface HeaderProps {
 export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
   const navItems = [
     { label: "Home", value: "/" },
-    { label: "About", value: "/about" },
     { label: "Players", value: "/players" },
     { label: "GameResult", value: "/game-results" },
     { label: "Contact", value: "/contact" },
   ]
 
   return (
-    <header className="bg-gray-900 text-white px-4 py-4">
+    <header className="bg-[#1A0B13] text-white px-4 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Star className="w-6 h-6 text-pink-500 fill-pink-500" />

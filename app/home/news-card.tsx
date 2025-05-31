@@ -15,7 +15,7 @@ interface NewsCardProps {
 
 export default function NewsCard({ date, title, description, imageUrl, onReadMore }: NewsCardProps) {
   return (
-    <Card className="bg-gray-800 border-gray-700 text-white overflow-hidden">
+    <Card className="bg-[#2C1220] border-[#3A1A2C] text-white overflow-hidden">
       <div className="aspect-video bg-gray-700">
         <img src={imageUrl || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
       </div>

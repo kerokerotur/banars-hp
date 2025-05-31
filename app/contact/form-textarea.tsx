@@ -16,7 +16,7 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
         <label className="block text-white text-sm font-medium">{label}</label>
         <textarea
           ref={ref}
-          className={`w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-colors resize-vertical min-h-[120px] ${className}`}
+          className={`w-full px-4 py-3 bg-[#2C1220] border border-[#3A1A2C] rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-colors resize-vertical min-h-[120px] ${className}`}
           {...props}
         />
         {error && <p className="text-red-400 text-sm">{error}</p>}

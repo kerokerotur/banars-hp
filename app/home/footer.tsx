@@ -21,7 +21,7 @@ export default function Footer({ onSocialClick, onLinkClick }: FooterProps) {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 border-t border-gray-800">
+    <footer className="bg-[#1A0B13] text-white py-8 px-4 border-t border-gray-800">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
           <div className="flex gap-6">

@@ -1,95 +1,41 @@
-import ContactInfo from "./contact-info";
+"use client"
+
+import { useState } from "react"
+import Header from "~/home/header"
+import ContactForm from "./contact-form"
+import ContactHero from "./contact-hero"
+import Footer from "~/home/footer"
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState(false)
+
+
+  const handleNavigate = (section: string) => {
+    console.log(`Navigating to: ${section}`)
+  }
+
+  const handleJoinUs = () => {
+    console.log("Join Us clicked")
+  }
+
+  const handleSocialClick = (platform: string) => {
+    console.log(`Social media clicked: ${platform}`)
+  }
+
+  const handleFooterLinkClick = (link: string) => {
+    console.log(`Footer link clicked: ${link}`)
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Contact Us</h1>
-      <p>Please fill out the form below to get in touch.</p>
+    <div className="min-h-screen bg-[#1A0B13]">
+      <Header onNavigate={handleNavigate} onJoinUs={handleJoinUs} />
 
-      <form className="w-full max-w-lg">
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-first-name"
-            >
-              First Name
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              id="grid-first-name"
-              type="text"
-              placeholder="Jane"
-            />
-            <p className="text-red-500 text-xs italic">Please fill out this field.</p>
-          </div>
-          <div className="w-full md:w-1/2 px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-last-name"
-            >
-              Last Name
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-last-name"
-              type="text"
-              placeholder="Doe"
-            />
-          </div>
-        </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Email
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-email"
-              type="email"
-              placeholder="Email"
-            />
-            <p className="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-          </div>
-        </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Message
-            </label>
-            <textarea
-              className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-              id="message"
-            ></textarea>
-            <p className="text-gray-600 text-xs italic">
-              Re-size can be disabled by set by resize-none / resize-vertical / resize-horizontal / resize-both
-            </p>
-          </div>
-        </div>
-        <div className="md:flex md:items-center">
-          <div className="md:w-1/3">
-            <button
-              className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="button"
-            >
-              Send
-            </button>
-          </div>
-          <div className="md:w-2/3"></div>
-        </div>
-      </form>
+      <main className="max-w-4xl mx-auto px-4 py-16">
+        <ContactHero />
+        <ContactForm isLoading={isLoading} />
+      </main>
 
-      <ContactInfo
-        onLocationClick={() => console.log("Location clicked - open maps")}
-        onPhoneClick={(phone) => console.log(`Phone clicked: ${phone}`)}
-        onEmailClick={(email) => console.log(`Email clicked: ${email}`)}
-      />
-    </main>
+      <Footer onSocialClick={handleSocialClick} onLinkClick={handleFooterLinkClick} />
+    </div>
   )
 }

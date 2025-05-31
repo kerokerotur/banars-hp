@@ -56,7 +56,7 @@ export default function GameResultsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-[#1A0B13]">
       <Header onNavigate={handleNavigate} onJoinUs={handleJoinUs} />
 
       <main className="max-w-7xl mx-auto px-4 py-12">

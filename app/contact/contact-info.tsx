@@ -59,7 +59,7 @@ export default function ContactInfo({ onLocationClick, onPhoneClick, onEmailClic
       {contactItems.map((item) => {
         const Icon = item.icon
         return (
-          <div key={item.title} className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-750 transition-colors">
+          <div key={item.title} className="bg-[#2C1220] p-6 rounded-lg text-center hover:bg-gray-750 transition-colors">
             <Icon className="w-8 h-8 text-pink-500 mx-auto mb-4" />
             <h3 className="text-white font-semibold mb-2">{item.title}</h3>
             {item.content.map((line, index) => (

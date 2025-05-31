@@ -10,11 +10,11 @@ export default function PlayersPage() {
   const pitchers: Player[] = [
     {
       id: "1",
-      name: "Ethan Carter",
-      nameJapanese: "イーサン・カーター",
+      name: "きなる",
+      nameJapanese: "きなる",
       position: "Starting Pitcher",
       positionJapanese: "先発投手",
-      imageUrl: "/placeholder.svg?height=80&width=80",
+      imageUrl: "/プライドジャパン47_250531_1.jpg",
     },
     {
       id: "2",
@@ -22,7 +22,7 @@ export default function PlayersPage() {
       nameJapanese: "リアム・ハーパー",
       position: "Relief Pitcher",
       positionJapanese: "リリーフ投手",
-      imageUrl: "/placeholder.svg?height=80&width=80",
+      imageUrl: "/プライドジャパン47_250531_1.jpg",
     },
   ]
 
@@ -33,7 +33,7 @@ export default function PlayersPage() {
       nameJapanese: "ノア・ベネット",
       position: "Starting Catcher",
       positionJapanese: "先発捕手",
-      imageUrl: "/placeholder.svg?height=80&width=80",
+      imageUrl: "/プライドジャパン47_250531_1.jpg",
     },
     {
       id: "4",
@@ -41,7 +41,7 @@ export default function PlayersPage() {
       nameJapanese: "オーウェン・フォスター",
       position: "Backup Catcher",
       positionJapanese: "控え捕手",
-      imageUrl: "/placeholder.svg?height=80&width=80",
+      imageUrl: "/プライドジャパン47_250531_1.jpg",
     },
   ]
 
@@ -68,7 +68,7 @@ export default function PlayersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-[#1A0B13]">
       <Header onNavigate={handleNavigate} onJoinUs={handleJoinUs} />
 
       <main className="max-w-7xl mx-auto px-4 py-12">

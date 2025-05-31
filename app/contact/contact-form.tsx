@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import FormInput from "./form-input"
 import FormTextarea from "./form-textarea"
-import { Button } from "react-day-picker"
+import { Button } from "~/components/ui/button"
 
 interface ContactFormData {
   name: string
@@ -77,9 +77,9 @@ export default function ContactForm({ onSubmit, isLoading = false }: ContactForm
         }))
       }
     }
-
+    
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-6 rounded-xl max-w-2xl mx-auto bg-[#23101A] p-8 shadow-2xl">
       <FormInput
         label="Name"
         placeholder="Your Name"
