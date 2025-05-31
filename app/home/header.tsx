@@ -1,6 +1,7 @@
 "use client"
 
 import { Star } from "lucide-react"
+import { NavLink } from "react-router"
 import { Button } from "~/components/ui/button"
 
 interface HeaderProps {
@@ -10,11 +11,11 @@ interface HeaderProps {
 
 export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
   const navItems = [
-    { label: "Home", value: "home" },
-    { label: "About", value: "about" },
-    { label: "Schedule", value: "schedule" },
-    { label: "News", value: "news" },
-    { label: "Contact", value: "contact" },
+    { label: "Home", value: "/" },
+    { label: "About", value: "/about" },
+    { label: "Players", value: "/players" },
+    { label: "GameResult", value: "/game-results" },
+    { label: "Contact", value: "/contact" },
   ]
 
   return (
@@ -27,13 +28,11 @@ export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
 
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <button
-              key={item.value}
-              onClick={() => onNavigate?.(item.value)}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {item.label}
-            </button>
+            <NavLink to={item.value}>
+              <div className="text-gray-300 hover:text-white transition-colors">
+                {item.label}
+              </div>
+            </NavLink>
           ))}
         </nav>
 

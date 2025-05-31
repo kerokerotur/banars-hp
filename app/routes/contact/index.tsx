@@ -1,5 +1,5 @@
-import type { Route } from "../+types/root";
-import { HomePage } from "../home/home";
+import ContactPage from "~/contact/page";
+import type { Route } from "./+types";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Page() {
-  return <HomePage />;
+  return <ContactPage />;
 }
