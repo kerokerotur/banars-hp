@@ -16,7 +16,7 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
       title: "Banars Win Championship Game",
       description:
         "The Banars defeated the Titans in a thrilling championship game, securing their place as league champions.",
-      imageUrl: "/placeholder.svg?height=200&width=300",
+      imageUrl: "/プライドジャパン1回戦_250531_1.jpg",
     },
     {
       id: "2",
@@ -24,7 +24,7 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
       title: "New Player Tryouts Announced",
       description:
         "Tryouts for new players will be held on June 1st at the City Park baseball field. All interested players are encouraged to attend.",
-      imageUrl: "/placeholder.svg?height=200&width=300",
+      imageUrl: "/プライドジャパン1回戦_250531_2.jpg",
     },
     {
       id: "3",
@@ -32,7 +32,7 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
       title: "Spring Training Camp a Success",
       description:
         "The Banars completed a successful spring training camp, focusing on skill development and team building.",
-      imageUrl: "/placeholder.svg?height=200&width=300",
+      imageUrl: "/プライドジャパン1回戦_250531_3.jpg",
     },
   ]
 
