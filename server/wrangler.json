@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2025-04-01",
+  "main": "src/index.ts",
+  "name": "server",
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "banars-hp",
+      "database_id": "acb91ac6-2b8b-41f8-9845-e6f581fc933b"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
