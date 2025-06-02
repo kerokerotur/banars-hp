@@ -23,11 +23,12 @@
     "wrangler": "4.18.0"
   },
   "scripts": {
+    "dev": "wrangler dev",
     "cf-typegen": "wrangler types",
     "check": "tsc && wrangler deploy --dry-run",
-    "deploy-remote": "wrangler deploy",
-    "dev": "wrangler dev",
-    "predeploy": "wrangler d1 migrations apply DB --remote",
-    "seedLocalD1": "wrangler d1 migrations apply DB --local"
+    "server-deploy": "wrangler deploy",
+    "mg-create": "npx wrangler d1 migrations create banars-hp",
+    "mg-deploy-local": "wrangler d1 migrations apply DB --local",
+    "mg-deploy-remote": "wrangler d1 migrations apply DB --remote"
   }
 }
