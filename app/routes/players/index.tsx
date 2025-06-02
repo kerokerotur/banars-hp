@@ -10,7 +10,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
-  const response = await fetch("http://localhost:8787/players");
+  const endpoint =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8787/players"
+      : "https://server.kerokerotur2000.workers.dev/players";
+
+  const response = await fetch(endpoint);
   if (!response.ok) {
     throw new Error("Failed to fetch players data");
   }
@@ -20,6 +25,5 @@ export async function loader() {
 
 export default function Page() {
   const { players } = useLoaderData();
-  console.error("Players data:", players);
   return <PlayersPage players={players} />;
 }
