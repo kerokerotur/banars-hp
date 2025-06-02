@@ -1,33 +1,64 @@
-"use client"
+"use client";
 
-import { Button } from "~/components/ui/button"
-
-
+import { Button } from "~/components/ui/button";
+import { useState, useEffect } from "react";
 
 interface HeroSectionProps {
-  onLearnMore?: () => void
+  onLearnMore?: () => void;
 }
 
 export default function HeroSection({ onLearnMore }: HeroSectionProps) {
+  const [backgroundImage, setBackgroundImage] = useState(
+    "/プライドジャパン47_250531_9.jpg"
+  );
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    const images = [
+      "/プライドジャパン47_250531_9.jpg",
+      "/プライドジャパン47_250531_8.jpg",
+      "/プライドジャパン1回戦_250531_4.jpg",
+      "/プライドジャパン47_250531_3.jpg",
+    ];
+    let index = 0;
+    const interval = setInterval(() => {
+      setOpacity(0);
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        setBackgroundImage(images[index]);
+        setOpacity(1);
+      }, 2000); // Transition duration
+    }, 7000); // Total interval duration
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
-      className="relative min-h-[700px] flex items-center justify-center text-center text-white"
+      className="relative min-h-[700px] flex items-center justify-center text-center text-white transition-opacity duration-2000"
       style={{
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/プライドジャパン47_250531_9.jpg)",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        opacity: opacity,
       }}
     >
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Banars Baseball Club</h1>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          Banars Baseball Club
+        </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-          Empowering young athletes through baseball, fostering teamwork, skill development, and a passion for the game.
+          Empowering young athletes through baseball, fostering teamwork, skill
+          development, and a passion for the game.
         </p>
-        <Button onClick={onLearnMore} className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 text-lg rounded-md">
+        <Button
+          onClick={onLearnMore}
+          className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 text-lg rounded-md"
+        >
           Learn More
         </Button>
       </div>
     </section>
-  )
+  );
 }
