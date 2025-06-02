@@ -1,12 +1,13 @@
 import { Button } from "~/components/ui/button"
 
 export interface Player {
-  id: string
-  name: string
+  id: number
+  player_name: string
   nameJapanese?: string
   position: string
+  uniform_bumber: number,
   positionJapanese?: string
-  imageUrl: string
+  imageUrl?: string
 }
 
 interface PlayerCardProps {
@@ -22,19 +23,19 @@ export default function PlayerCard({ player, onViewProfile, className = "" }: Pl
         <div className="relative">
           <img
             src={player.imageUrl || "/placeholder.svg?height=80&width=80"}
-            alt={player.name}
+            alt={player.player_name}
             className="w-20 h-20 rounded-full object-cover border-2 border-pink-500"
           />
         </div>
 
         <div className="flex-1">
-          <h3 className="text-white text-lg font-semibold mb-1">{player.nameJapanese || player.name}</h3>
+          <h3 className="text-white text-lg font-semibold mb-1">{player.nameJapanese || player.player_name}</h3>
           <p className="text-gray-400 text-sm">{player.positionJapanese || player.position}</p>
         </div>
       </div>
 
       <Button
-        onClick={() => onViewProfile?.(player.id)}
+        onClick={() => onViewProfile?.(player.id.toString())}
         className="w-full border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
       >
         プロフィールを見る

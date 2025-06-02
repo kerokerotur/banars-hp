@@ -6,45 +6,11 @@ import PlayerSection from "./player-section"
 import Footer from "~/home/footer"
 
 
-export default function PlayersPage() {
-  const pitchers: Player[] = [
-    {
-      id: "1",
-      name: "きなる",
-      nameJapanese: "きなる",
-      position: "Starting Pitcher",
-      positionJapanese: "先発投手",
-      imageUrl: "/プライドジャパン47_250531_1.jpg",
-    },
-    {
-      id: "2",
-      name: "Liam Harper",
-      nameJapanese: "リアム・ハーパー",
-      position: "Relief Pitcher",
-      positionJapanese: "リリーフ投手",
-      imageUrl: "/プライドジャパン47_250531_1.jpg",
-    },
-  ]
+interface PlayersPageProps {
+  players: Player[];
+}
 
-  const catchers: Player[] = [
-    {
-      id: "3",
-      name: "Noah Bennett",
-      nameJapanese: "ノア・ベネット",
-      position: "Starting Catcher",
-      positionJapanese: "先発捕手",
-      imageUrl: "/プライドジャパン47_250531_1.jpg",
-    },
-    {
-      id: "4",
-      name: "Owen Foster",
-      nameJapanese: "オーウェン・フォスター",
-      position: "Backup Catcher",
-      positionJapanese: "控え捕手",
-      imageUrl: "/プライドジャパン47_250531_1.jpg",
-    },
-  ]
-
+export default function PlayersPage({ players }: PlayersPageProps) {
   const handleViewProfile = (playerId: string) => {
     console.log(`View profile clicked for player: ${playerId}`)
     // 選手詳細ページに遷移
@@ -80,9 +46,9 @@ export default function PlayersPage() {
           </p>
         </div>
 
-        <PlayerSection title="投手" players={pitchers} onViewProfile={handleViewProfile} />
+        <PlayerSection title="投手" players={players.filter(player => player.position === "Pitcher" || player.position === "Relief Pitcher")} onViewProfile={handleViewProfile} />
 
-        <PlayerSection title="捕手" players={catchers} onViewProfile={handleViewProfile} />
+        <PlayerSection title="捕手" players={players.filter(player => player.position === "Starting Catcher" || player.position === "Backup Catcher")} onViewProfile={handleViewProfile} />
       </main>
 
       <Footer onSocialClick={handleSocialClick} onLinkClick={handleFooterLinkClick} />
