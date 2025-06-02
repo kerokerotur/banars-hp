@@ -4,8 +4,13 @@ import { useLoaderData } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "バナーズ選手情報" },
+    {
+      name: "description",
+      content:
+        "Discover the talented players of Banars Baseball Club. Learn more about their skills, positions, and contributions to the team.",
+    },
+    { name: "keywords", content: "バナーズ, 野球, ホーム, チーム, プロフィール" },
   ];
 }
 
