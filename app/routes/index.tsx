@@ -9,14 +9,14 @@ export function meta({}: Route.MetaArgs) {
       content: "バナーズ野球クラブの公式ホームページ。チーム情報、試合結果、イベント情報をお届けします。",
     },
     { name: "keywords", content: "バナーズ, 野球, ホーム, チーム, イベント" },
-    { name: "og:locale", content: "ja_JP" },
-    { name: "og:site_name", content: "Banars Baseball Club" },
-    { name: "og:type", content: "article" },
-    { name: "og:title", content: "Banars Baseball Club" },
-    { name: "og:description", content: "バナーズのHPです。練習試合相手募集しています！" },
-    { name: "og:url", content: "https://banars-base.com" },
-    { name: "og:image", content: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2025/05/17db55667deaaf8db8a6f6cac09f8a72.png" },
-    { name: "og:image:alt", content: "Banars Baseball Club" },
+    { name: "og:locale", property: "ja_JP" },
+    { name: "og:site_name", property: "Banars Baseball Club" },
+    { name: "og:type", property: "article" },
+    { name: "og:title", property: "Banars Baseball Club" },
+    { name: "og:description", property: "バナーズのHPです。練習試合相手募集しています！" },
+    { name: "og:url", property: "https://banars-base.com" },
+    { name: "og:image", property: "https://banars-base.com/ogp.png" },
+    { name: "og:image:alt", property: "Banars Baseball Club" },
   ];
 }
 
