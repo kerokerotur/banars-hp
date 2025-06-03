@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
         <Helmet>
-          <link rel="icon" href="/logo.png" type="image/png" />
+          <link rel="icon" href="/favicon.png" type="image/png" />
         </Helmet>
       </head>
       <body>
