@@ -1,6 +1,5 @@
 "use client"
 
-import { Star } from "lucide-react"
 import { NavLink } from "react-router"
 import { Button } from "~/components/ui/button"
 
@@ -20,8 +19,8 @@ export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
   return (
     <header className="bg-[#1A0B13] text-white px-4 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Star className="w-6 h-6 text-pink-500 fill-pink-500" />
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="Banars Logo" width={32} height={32} />
           <span className="text-lg font-semibold">Banars</span>
         </div>
 
