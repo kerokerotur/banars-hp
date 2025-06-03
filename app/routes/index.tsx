@@ -15,7 +15,7 @@ export function meta({}: Route.MetaArgs) {
     { name: "og:title", content: "Banars Baseball Club" },
     { name: "og:description", content: "バナーズのHPです。練習試合相手募集しています！" },
     { name: "og:url", content: "https://banars-base.com" },
-    { name: "og:image", content: "/ogp.png" },
+    { name: "og:image", content: "https://banars-base.com/ogp.png" },
     { name: "og:image:alt", content: "Banars Baseball Club" },
   ];
 }
