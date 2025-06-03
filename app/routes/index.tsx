@@ -9,6 +9,8 @@ export function meta({}: Route.MetaArgs) {
       content: "バナーズ野球クラブの公式ホームページ。チーム情報、試合結果、イベント情報をお届けします。",
     },
     { name: "keywords", content: "バナーズ, 野球, ホーム, チーム, イベント" },
+    { name: "og:image", content: "/ogp.png" },
+    { name: "og:image:alt", content: "Banars Baseball Club" },
   ];
 }
 

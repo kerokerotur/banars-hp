@@ -34,8 +34,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
         <Helmet>
           <link rel="icon" href="/favicon.png" type="image/png" />
-          <meta property="og:image" content="/ogp.png" />
-          <meta property="og:image:alt" content="Banars Baseball Club" />
         </Helmet>
       </head>
       <body>
