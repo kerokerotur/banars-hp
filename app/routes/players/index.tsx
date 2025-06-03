@@ -14,12 +14,10 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const isDevelopment = process.env.NODE_ENV === "development";
+const serverUrl = process.env.SERVER_URL || "http://localhost:8787";
 
 export async function loader() {
-  const endpoint = isDevelopment
-    ? "http://localhost:8787/players"
-    : "https://server.kerokerotur2000.workers.dev/players";
+  const endpoint = `${serverUrl}/players`
 
   const response = await fetch(endpoint);
   if (!response.ok) {
@@ -33,5 +31,3 @@ export default function Page() {
   const { players } = useLoaderData();
   return <PlayersPage players={players} />;
 }
-
-export { isDevelopment };
