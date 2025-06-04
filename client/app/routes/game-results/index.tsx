@@ -1,4 +1,4 @@
-import GameResultsPage from "~/game-results/page";
+import GameResultsPage from "~/features/game-results/page";
 import type { Route } from "./+types";
 
 export function meta({}: Route.MetaArgs) {

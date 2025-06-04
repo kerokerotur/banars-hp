@@ -1,4 +1,4 @@
-import ContactPage from "~/contact/page";
+import ContactPage from "~/features/contact/page";
 import type { Route } from "./+types";
 
 export function meta({}: Route.MetaArgs) {

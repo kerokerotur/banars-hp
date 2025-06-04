@@ -1,9 +1,9 @@
 "use client";
 
-import Header from "~/home/header";
+import Header from "~/layout/header";
 import type { Player } from "./player-card";
 import PlayerSection from "./player-section";
-import Footer from "~/home/footer";
+import Footer from "~/layout/footer";
 
 interface PlayersPageProps {
   players: Player[];

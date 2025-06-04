@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import TabToggle from "~/players/tab-toggle";
+import TabToggle from "~/features/players/tab-toggle";
 import GameResultsTable from "./game-results-table";
 import type { GameResult } from "./game-results-table";
-import Header from "~/home/header";
-import Footer from "~/home/footer";
+import Header from "~/layout/header";
+import Footer from "~/layout/footer";
 
 export default function GameResultsPage() {
   const [activeTab, setActiveTab] = useState("past");

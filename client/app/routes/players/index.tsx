@@ -1,4 +1,4 @@
-import PlayersPage from "~/players/page";
+import PlayersPage from "~/features/players/page";
 import type { Route } from "./+types";
 import { useLoaderData } from "react-router";
 

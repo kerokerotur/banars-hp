@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Header from "~/home/header";
+import Header from "~/layout/header";
 import ContactForm from "./contact-form";
 import ContactHero from "./contact-hero";
-import Footer from "~/home/footer";
+import Footer from "~/layout/footer";
 
 export default function ContactPage() {
   const [isLoading, setIsLoading] = useState(false);

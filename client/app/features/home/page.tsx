@@ -1,8 +1,8 @@
 "use client"
 
 import AboutSection from "./about-section"
-import Footer from "./footer"
-import Header from "./header"
+import Footer from "../../layout/footer"
+import Header from "../../layout/header"
 import HeroSection from "./hero-section"
 import NewsSection from "./news-section"
 
