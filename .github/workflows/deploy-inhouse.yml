@@ -1,0 +1,16 @@
+name: Deploy to Inhouse Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Trigger Cloudflare Pages Deploy Hook
+        run: |
+          curl -d "" "${{ secrets.INHOUSE_CLOUDFLARE_DEPLOY_HOOK_URL }}"
