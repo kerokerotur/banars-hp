@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "~/components/ui/button";
 import { useState, useEffect } from "react";
+import { Button } from "~/ui/button";
 
 interface HeroSectionProps {
   onLearnMore?: () => void;

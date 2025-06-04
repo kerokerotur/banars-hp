@@ -1,7 +1,7 @@
 "use client"
 
 import { NavLink } from "react-router"
-import { Button } from "~/components/ui/button"
+import { Button } from "~/ui/button"
 
 interface HeaderProps {
   onNavigate?: (section: string) => void
