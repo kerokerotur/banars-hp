@@ -44,16 +44,12 @@ export function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1A0B13]">
-      <Header onNavigate={handleNavigate} onJoinUs={handleJoinUs} />
-
+    <div>
       <HeroSection onLearnMore={handleLearnMore} />
 
       <AboutSection />
 
       <NewsSection onViewAllNews={handleViewAllNews} onReadMore={handleReadMore} />
-
-      <Footer onSocialClick={handleSocialClick} onLinkClick={handleFooterLinkClick} />
     </div>
   )
 }
