@@ -5,4 +5,6 @@ export default [
     index("routes/index.tsx"),
     route("players", "routes/players/index.tsx"),
   ]),
+  layout("routes/players/layout-sidebar.tsx", [
+  ]),
 ] satisfies RouteConfig;

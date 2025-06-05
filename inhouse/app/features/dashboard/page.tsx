@@ -6,7 +6,6 @@ import StatsCard from "../stats-card"
 
 export default function DashboardPage() {
   return (
-    <DashboardLayout>
       <div className="space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-white">Dashboard</h1>
@@ -28,6 +27,5 @@ export default function DashboardPage() {
 
         <RecentMatches />
       </div>
-    </DashboardLayout>
   )
 }

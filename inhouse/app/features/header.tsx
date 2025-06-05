@@ -16,13 +16,13 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-6">
-            <Link href="/dashboard" className="text-white hover:text-pink-400 transition-colors">
+            <Link href="/" className="text-white hover:text-pink-400 transition-colors">
               Dashboard
             </Link>
             <Link href="/players" className="text-gray-400 hover:text-pink-400 transition-colors">
               Players
             </Link>
-            <Link href="/matches" className="text-gray-400 hover:text-pink-400 transition-colors">
+            {/* <Link href="/matches" className="text-gray-400 hover:text-pink-400 transition-colors">
               Matches
             </Link>
             <Link href="/practice" className="text-gray-400 hover:text-pink-400 transition-colors">
@@ -30,7 +30,7 @@ export default function Header() {
             </Link>
             <Link href="/settings" className="text-gray-400 hover:text-pink-400 transition-colors">
               Settings
-            </Link>
+            </Link> */}
           </nav>
         </div>
 
