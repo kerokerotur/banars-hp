@@ -3,8 +3,8 @@ import type { Route } from "./+types";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Banars Admin" },
+    { name: "description", content: "バナーズHPの管理画面です" },
   ];
 }
 

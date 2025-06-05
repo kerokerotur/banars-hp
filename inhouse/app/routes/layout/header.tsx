@@ -7,12 +7,10 @@ export default function Header() {
   return (
     <header className="bg-[#14090F] border-b border-pink-900/50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-8">
-          <Link href="/dashboard" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
-              <div className="w-5 h-5 bg-pink-400 rounded-full border-2 border-pink-600"></div>
-            </div>
-            <span className="text-xl font-bold text-white">Team Manager</span>
+        <div className="flex items-center space-x-10">
+          <Link href="/dashboard" className="flex items-center space-x-4">
+            <img src="/logo.png" alt="Banars Logo" width={32} height={32} />
+            <span className="text-xl font-bold text-white">Banars Admin</span>
           </Link>
 
           <nav className="hidden md:flex space-x-6">
