@@ -1,4 +1,4 @@
-import PlayerForm from "../player-form";
+import PlayerForm from "./player-form";
 
 export default function PlayersPage() {
   return (

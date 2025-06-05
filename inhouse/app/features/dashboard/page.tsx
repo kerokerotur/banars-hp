@@ -1,7 +1,7 @@
 import { Plus, Users, TrendingUp } from "lucide-react"
 import { Button } from "~/ui/button"
-import RecentMatches from "../recent-matches"
-import StatsCard from "../stats-card"
+import RecentMatches from "./recent-matches"
+import StatsCard from "./stats-card"
 
 export default function DashboardPage() {
   return (
