@@ -21,7 +21,7 @@ export default function LoginForm() {
   }
 
   return (
-    <Card className="w-full max-w-md bg-gray-800 border-gray-700">
+    <Card className="w-full max-w-md bg-[#14090F] border-gray-700">
       <CardHeader className="text-center space-y-4">
         <div className="mx-auto w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center">
           <div className="w-10 h-10 bg-pink-400 rounded-full border-4 border-pink-600"></div>

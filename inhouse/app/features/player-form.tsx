@@ -50,7 +50,7 @@ export default function PlayerForm() {
           placeholder="例：山田 太郎"
           value={playerData.name}
           onChange={(e) => handleInputChange("name", e.target.value)}
-          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function PlayerForm() {
           placeholder="例：ピッチャー"
           value={playerData.position}
           onChange={(e) => handleInputChange("position", e.target.value)}
-          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
         />
       </div>
 
@@ -76,7 +76,7 @@ export default function PlayerForm() {
           placeholder="例：10"
           value={playerData.jerseyNumber}
           onChange={(e) => handleInputChange("jerseyNumber", e.target.value)}
-          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400"
+          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
         />
       </div>
 
@@ -89,13 +89,13 @@ export default function PlayerForm() {
           placeholder="選手の詳細情報、アピールポイントなど"
           value={playerData.profile}
           onChange={(e) => handleInputChange("profile", e.target.value)}
-          className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 min-h-[120px]"
+          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400 min-h-[120px]"
         />
       </div>
 
       <div className="space-y-2">
         <Label className="text-white">画像</Label>
-        <Card className="bg-gray-800 border-gray-600 border-dashed">
+        <Card className="bg-[#14090F] border-gray-600 border-dashed">
           <CardContent className="p-8">
             <div className="text-center">
               <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="image-upload" />

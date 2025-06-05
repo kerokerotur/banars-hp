@@ -16,7 +16,7 @@ export default function Sidebar() {
 	const currentPathname = typeof window !== "undefined" ? window.location.pathname : ""
 
 	return (
-		<div className="w-64 bg-gray-800 border-r border-gray-700 p-6">
+		<div className="w-64 bg-[#14090F] border-r border-gray-700 p-6">
 			<div className="flex items-center space-x-3 mb-8">
 				<div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center">
 					<div className="w-8 h-8 bg-pink-400 rounded-full border-2 border-pink-600"></div>

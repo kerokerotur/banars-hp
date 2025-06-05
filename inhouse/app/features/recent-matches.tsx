@@ -24,15 +24,15 @@ const matches = [
 
 export default function RecentMatches() {
   return (
-    <Card className="bg-gray-800 border-gray-700">
+    <Card className="bg-[#1F0F18] border-pink-900/50">
       <CardHeader>
         <CardTitle className="text-xl font-bold text-white">Recent Matches</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-700">
+              <tr className="border-b border-pink-900/50">
                 <th className="text-left py-3 px-4 text-gray-400 font-medium">DATE</th>
                 <th className="text-left py-3 px-4 text-gray-400 font-medium">OPPONENT</th>
                 <th className="text-left py-3 px-4 text-gray-400 font-medium">RESULT</th>
@@ -41,7 +41,7 @@ export default function RecentMatches() {
             </thead>
             <tbody>
               {matches.map((match, index) => (
-                <tr key={index} className="border-b border-gray-700">
+                <tr key={index} className="border-b border-pink-900/50">
                   <td className="py-4 px-4 text-gray-300">{match.date}</td>
                   <td className="py-4 px-4 text-gray-300">{match.opponent}</td>
                   <td className="py-4 px-4">

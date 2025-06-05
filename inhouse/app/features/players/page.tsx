@@ -1,5 +1,4 @@
 import PlayerForm from "../player-form";
-import PlayerLayout from "../player-layout";
 
 export default function PlayersPage() {
   return (
