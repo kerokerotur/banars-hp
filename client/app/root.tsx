@@ -46,7 +46,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </Helmet>
       </head>
       <body>
-        {children}
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -57,6 +56,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
