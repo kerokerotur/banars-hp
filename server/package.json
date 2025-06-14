@@ -1,5 +1,5 @@
 {
-  "name": "d1-template",
+  "name": "server",
   "description": "Cloudflare's native serverless SQL database.",
   "cloudflare": {
     "label": "Worker + D1 Database",
@@ -34,6 +34,8 @@
     "format": "prettier --write \"src/**/*.{ts,js}\"",
     "format:check": "prettier --check \"src/**/*.{ts,js}\"",
     "lint": "eslint src --fix --ext .ts,.js",
-    "lint:check": "eslint src --ext .ts,.js"
+    "lint:check": "eslint src --ext .ts,.js",
+    "clean": "rm -rf dist node_modules/.cache",
+    "dev:server": "wrangler dev"
   }
 }

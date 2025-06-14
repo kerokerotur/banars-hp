@@ -1,5 +1,5 @@
 {
-  "name": "my-react-router-app",
+  "name": "inhouse",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,9 @@
     "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx}\"",
     "format:check": "prettier --check \"app/**/*.{ts,tsx,js,jsx}\"",
     "lint": "eslint app --fix --ext .ts,.tsx,.js,.jsx",
-    "lint:check": "eslint app --ext .ts,.tsx,.js,.jsx"
+    "lint:check": "eslint app --ext .ts,.tsx,.js,.jsx",
+    "clean": "rm -rf build .react-router node_modules/.cache",
+    "dev:frontend": "node ../scripts/wait-for-server.js && react-router dev"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

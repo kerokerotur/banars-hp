@@ -1,0 +1,125 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        "lib/**",
+        ".next/**",
+        ".react-router/**"
+      ],
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "build:dev": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        "lib/**",
+        ".react-router/**"
+      ],
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "build:prod": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        "lib/**",
+        ".react-router/**"
+      ],
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "dev:server": {
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV", "CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "dev:frontend": {
+      "dependsOn": ["^dev:server"],
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "lint": {
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "lint:check": {
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "format": {
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "format:check": {
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "env": ["NODE_ENV"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "env": ["NODE_ENV", "VITE_*", "REACT_*", "SERVER_URL"]
+    },
+    "server-deploy": {
+      "dependsOn": ["^build", "typecheck"],
+      "outputs": [],
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "cf-typegen": {
+      "outputs": ["worker-configuration.d.ts"],
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "check": {
+      "dependsOn": ["typecheck"],
+      "outputs": [],
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "mg-deploy-local": {
+      "cache": false,
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "mg-deploy-remote": {
+      "cache": false,
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    },
+    "mg-create": {
+      "cache": false,
+      "env": ["CLOUDFLARE_*", "WRANGLER_*"]
+    }
+  },
+  "globalDependencies": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "turbo.json",
+    "tsconfig.json",
+    ".eslintrc*",
+    "eslint.config.*",
+    ".prettierrc*",
+    "prettier.config.*"
+  ],
+  "globalEnv": [
+    "NODE_ENV",
+    "CI"
+  ]
+}

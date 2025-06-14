@@ -1,5 +1,5 @@
 packages:
-  - client/*
-  - common/*
-  - inhouse/*
-  - server/*
+  - client
+  - common
+  - inhouse
+  - server
