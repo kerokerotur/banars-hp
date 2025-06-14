@@ -7,7 +7,11 @@
     "build:prod": "env-cmd -f .env.prod react-router build",
     "dev": "react-router dev",
     "start": "serve ./build/client",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx}\"",
+    "format:check": "prettier --check \"app/**/*.{ts,tsx,js,jsx}\"",
+    "lint": "eslint app --fix --ext .ts,.tsx,.js,.jsx",
+    "lint:check": "eslint app --ext .ts,.tsx,.js,.jsx"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -25,7 +29,8 @@
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
     "react-router": "^7.5.3",
-    "tailwind-merge": "^3.3.0"
+    "tailwind-merge": "^3.3.0",
+    "@project/common": "workspace:*"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

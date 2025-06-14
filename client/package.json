@@ -1,5 +1,5 @@
 {
-  "name": "homepage",
+  "name": "client",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,7 +7,11 @@
     "build:prod": "env-cmd -f .env.prod react-router build",
     "dev": "react-router dev",
     "start": "serve ./build/client",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "format": "prettier --write \"app/**/*.{ts,tsx,js,jsx}\"",
+    "format:check": "prettier --check \"app/**/*.{ts,tsx,js,jsx}\"",
+    "lint": "eslint app --fix --ext .ts,.tsx,.js,.jsx",
+    "lint:check": "eslint app --ext .ts,.tsx,.js,.jsx"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.2",
@@ -65,7 +69,8 @@
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "@project/common": "workspace:*"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
