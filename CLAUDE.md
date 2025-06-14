@@ -220,6 +220,8 @@ INSERT INTO player VALUES
 - 開発環境では`pnpm dev`でアプリケーションを起動
 - **重要**: `node_modules/`は必ずgitignoreに含め、コミットしない
 - 依存関係の変更は`package.json`と`pnpm-lock.yaml`のみコミット
+- **コミットメッセージ**: 日本語で記述する
+- **すべてのメッセージ**: 日本語で統一する
 
 ## エディタ設定（VS Code）
 
