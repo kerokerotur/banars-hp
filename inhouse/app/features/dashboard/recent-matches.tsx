@@ -1,5 +1,5 @@
-import  { Badge } from "lucide-react"
-import  { Card, CardHeader, CardTitle, CardContent } from "~/ui/card"
+import { Badge } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent } from "~/ui/card";
 
 const matches = [
   {
@@ -20,23 +20,33 @@ const matches = [
     result: "Win",
     score: "6-1",
   },
-]
+];
 
 export default function RecentMatches() {
   return (
     <Card className="bg-[#1F0F18] border-pink-900/50">
       <CardHeader>
-        <CardTitle className="text-xl font-bold text-white">Recent Matches</CardTitle>
+        <CardTitle className="text-xl font-bold text-white">
+          Recent Matches
+        </CardTitle>
       </CardHeader>
       <CardContent className="">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-pink-900/50">
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">DATE</th>
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">OPPONENT</th>
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">RESULT</th>
-                <th className="text-left py-3 px-4 text-gray-400 font-medium">SCORE</th>
+                <th className="text-left py-3 px-4 text-gray-400 font-medium">
+                  DATE
+                </th>
+                <th className="text-left py-3 px-4 text-gray-400 font-medium">
+                  OPPONENT
+                </th>
+                <th className="text-left py-3 px-4 text-gray-400 font-medium">
+                  RESULT
+                </th>
+                <th className="text-left py-3 px-4 text-gray-400 font-medium">
+                  SCORE
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -48,7 +58,9 @@ export default function RecentMatches() {
                     <Badge
                       // variant={match.result === "Win" ? "default" : "destructive"}
                       className={
-                        match.result === "Win" ? "bg-green-600 hover:bg-green-700" : "bg-red-600 hover:bg-red-700"
+                        match.result === "Win"
+                          ? "bg-green-600 hover:bg-green-700"
+                          : "bg-red-600 hover:bg-red-700"
                       }
                     >
                       {match.result}
@@ -62,5 +74,5 @@ export default function RecentMatches() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

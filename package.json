@@ -10,7 +10,11 @@
     "lint:check": "eslint .",
     "typecheck": "pnpm -r typecheck"
   },
-  "keywords": ["baseball", "homepage", "monorepo"],
+  "keywords": [
+    "baseball",
+    "homepage",
+    "monorepo"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",

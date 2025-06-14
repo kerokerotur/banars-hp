@@ -38,7 +38,7 @@
   "eslint.workingDirectories": [
     ".",
     "./client",
-    "./inhouse", 
+    "./inhouse",
     "./common",
     "./server"
   ],
@@ -62,7 +62,7 @@
     "**/.next": true,
     "**/.react-router": true
   },
-  
+
   // ウォッチ除外設定
   "files.watcherExclude": {
     "**/node_modules/**": true,

@@ -22,15 +22,6 @@
       "~/*": ["./*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "index.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib",
-    "**/*.test.ts",
-    "**/*.test.tsx"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "index.ts"],
+  "exclude": ["node_modules", "lib", "**/*.test.ts", "**/*.test.tsx"]
 }

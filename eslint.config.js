@@ -39,17 +39,17 @@ export default [
       ...typescriptPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
-      
+
       // TypeScript specific rules
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "warn",
-      
+
       // React specific rules
       "react/react-in-jsx-scope": "off", // React 17+では不要
       "react/prop-types": "off", // TypeScriptを使用する場合は不要
-      
+
       // General rules
       "no-console": "warn",
       "no-unused-vars": "off", // TypeScript版を使用

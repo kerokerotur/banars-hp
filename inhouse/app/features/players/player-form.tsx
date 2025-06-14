@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { ImageIcon } from "lucide-react"
-import  { Label } from "@radix-ui/react-label"
-import  { Button } from "~/ui/button"
-import  { Card, CardContent } from "~/ui/card"
-import  { Input } from "~/ui/input"
-import { Textarea } from "~/ui/textarea"
+import { useState } from "react";
+import { ImageIcon } from "lucide-react";
+import { Label } from "@radix-ui/react-label";
+import { Button } from "~/ui/button";
+import { Card, CardContent } from "~/ui/card";
+import { Input } from "~/ui/input";
+import { Textarea } from "~/ui/textarea";
 
 export default function PlayerForm() {
   const [playerData, setPlayerData] = useState({
@@ -17,27 +17,27 @@ export default function PlayerForm() {
     jerseyNumber: "",
     profile: "",
     image: null as File | null,
-  })
+  });
 
   const handleInputChange = (field: string, value: string) => {
-    setPlayerData((prev) => ({ ...prev, [field]: value }))
-  }
+    setPlayerData((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
+    const file = e.target.files?.[0];
     if (file) {
-      setPlayerData((prev) => ({ ...prev, image: file }))
+      setPlayerData((prev) => ({ ...prev, image: file }));
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Player data:", playerData)
-  }
+    e.preventDefault();
+    console.log("Player data:", playerData);
+  };
 
   const handlePreview = () => {
-    console.log("Preview player:", playerData)
-  }
+    console.log("Preview player:", playerData);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -98,14 +98,26 @@ export default function PlayerForm() {
         <Card className="bg-[#14090F] border-gray-600 border-dashed">
           <CardContent className="p-8">
             <div className="text-center">
-              <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="image-upload" />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+                id="image-upload"
+              />
               <label htmlFor="image-upload" className="cursor-pointer">
                 <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-pink-500 mb-2">クリックしてアップロード またはドラッグ&ドロップ</p>
-                <p className="text-gray-400 text-sm">PNG, JPG, GIF (最大 5MB)</p>
+                <p className="text-pink-500 mb-2">
+                  クリックしてアップロード またはドラッグ&ドロップ
+                </p>
+                <p className="text-gray-400 text-sm">
+                  PNG, JPG, GIF (最大 5MB)
+                </p>
               </label>
               {playerData.image && (
-                <p className="text-green-400 text-sm mt-2">ファイルが選択されました: {playerData.image.name}</p>
+                <p className="text-green-400 text-sm mt-2">
+                  ファイルが選択されました: {playerData.image.name}
+                </p>
               )}
             </div>
           </CardContent>
@@ -121,10 +133,13 @@ export default function PlayerForm() {
         >
           プレビュー
         </Button>
-        <Button type="submit" className="bg-pink-500 hover:bg-pink-600 text-white">
+        <Button
+          type="submit"
+          className="bg-pink-500 hover:bg-pink-600 text-white"
+        >
           更新する
         </Button>
       </div>
     </form>
-  )
+  );
 }

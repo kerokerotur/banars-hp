@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar"
-import Link from "next/link"
+import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -14,10 +14,16 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-white hover:text-pink-400 transition-colors">
+            <Link
+              href="/"
+              className="text-white hover:text-pink-400 transition-colors"
+            >
               Dashboard
             </Link>
-            <Link href="/players" className="text-gray-400 hover:text-pink-400 transition-colors">
+            <Link
+              href="/players"
+              className="text-gray-400 hover:text-pink-400 transition-colors"
+            >
               Players
             </Link>
             {/* <Link href="/matches" className="text-gray-400 hover:text-pink-400 transition-colors">
@@ -38,5 +44,5 @@ export default function Header() {
         </Avatar>
       </div>
     </header>
-  )
+  );
 }

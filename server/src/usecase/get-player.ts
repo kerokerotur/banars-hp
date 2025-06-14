@@ -1,4 +1,3 @@
-
 export async function getPlayer(env: Env): Promise<any> {
   const query = "SELECT * FROM player";
 

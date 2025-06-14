@@ -1,10 +1,10 @@
-import type React from "react"
-import { Card, CardContent } from "~/ui/card"
+import type React from "react";
+import { Card, CardContent } from "~/ui/card";
 
 interface StatsCardProps {
-  title: string
-  value: string
-  icon: React.ReactNode
+  title: string;
+  value: string;
+  icon: React.ReactNode;
 }
 
 export default function StatsCard({ title, value, icon }: StatsCardProps) {
@@ -20,5 +20,5 @@ export default function StatsCard({ title, value, icon }: StatsCardProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
