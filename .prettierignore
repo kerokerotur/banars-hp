@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+lib/
+.next/
+.react-router/
+
+# Generated files
+*.d.ts
+coverage/
+*.lcov
+
+# Logs
+*.log
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Temporary files
+tmp/
+temp/
+.cache/
