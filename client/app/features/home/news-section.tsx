@@ -61,7 +61,6 @@ export default function NewsSection({
         <div className="text-center">
           <Button
             onClick={onViewAllNews}
-            variant="outline"
             className="border-pink-600 text-pink-400 hover:bg-pink-600 hover:text-white px-8 py-3"
           >
             View All News

@@ -374,19 +374,30 @@ packages:
 }
 ```
 
-**TypeScript設定（common/tsconfig.json）**:
+**TypeScript設定（ルート統一管理）**:
 
+### 設定ファイル構成
+- **ルート**: `/tsconfig.json` - 全体の基本設定
+- **client/**: extends ルート設定 + React Router設定
+- **inhouse/**: extends ルート設定 + React Router設定  
+- **server/**: extends ルート設定 + Cloudflare Workers設定
+- **common/**: extends ルート設定 + ライブラリビルド設定
+
+### 統一されている設定
 ```json
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "ESNext", 
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "./lib",
-    "noEmit": false
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@project/common": ["./common"],
+      "@project/common/*": ["./common/*"]
+    }
   }
 }
 ```

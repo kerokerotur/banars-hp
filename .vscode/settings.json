@@ -34,14 +34,8 @@
     "editor.formatOnSave": true
   },
 
-  // ESLint設定
-  "eslint.workingDirectories": [
-    ".",
-    "./client",
-    "./inhouse",
-    "./common",
-    "./server"
-  ],
+  // ESLint設定（ルートで統一管理）
+  "eslint.workingDirectories": ["."],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -49,10 +43,12 @@
     "typescriptreact"
   ],
 
-  // TypeScript設定
+  // TypeScript設定（ルート統一管理）
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.suggest.paths": true,
 
   // ファイル除外設定
   "files.exclude": {
