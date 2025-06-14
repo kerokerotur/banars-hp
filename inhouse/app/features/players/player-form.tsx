@@ -9,6 +9,7 @@ import { Button } from "~/ui/button";
 import { Card, CardContent } from "~/ui/card";
 import { Input } from "~/ui/input";
 import { Textarea } from "~/ui/textarea";
+import { dashboardSystem } from "~/design-system";
 
 export default function PlayerForm() {
   const [playerData, setPlayerData] = useState({
@@ -40,9 +41,9 @@ export default function PlayerForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="name" className="text-white">
+    <form onSubmit={handleSubmit} className={dashboardSystem.layouts.form.container}>
+      <div className={dashboardSystem.layouts.form.field}>
+        <Label htmlFor="name" className={dashboardSystem.labels.required}>
           選手名
         </Label>
         <Input
@@ -50,12 +51,12 @@ export default function PlayerForm() {
           placeholder="例：山田 太郎"
           value={playerData.name}
           onChange={(e) => handleInputChange("name", e.target.value)}
-          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
+          className={dashboardSystem.inputs.default}
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="position" className="text-white">
+      <div className={dashboardSystem.layouts.form.field}>
+        <Label htmlFor="position" className={dashboardSystem.labels.default}>
           ポジション
         </Label>
         <Input
@@ -63,12 +64,12 @@ export default function PlayerForm() {
           placeholder="例：ピッチャー"
           value={playerData.position}
           onChange={(e) => handleInputChange("position", e.target.value)}
-          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
+          className={dashboardSystem.inputs.default}
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="jerseyNumber" className="text-white">
+      <div className={dashboardSystem.layouts.form.field}>
+        <Label htmlFor="jerseyNumber" className={dashboardSystem.labels.default}>
           背番号
         </Label>
         <Input
@@ -76,12 +77,12 @@ export default function PlayerForm() {
           placeholder="例：10"
           value={playerData.jerseyNumber}
           onChange={(e) => handleInputChange("jerseyNumber", e.target.value)}
-          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400"
+          className={dashboardSystem.inputs.default}
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="profile" className="text-white">
+      <div className={dashboardSystem.layouts.form.field}>
+        <Label htmlFor="profile" className={dashboardSystem.labels.default}>
           プロフィール
         </Label>
         <Textarea
@@ -89,13 +90,13 @@ export default function PlayerForm() {
           placeholder="選手の詳細情報、アピールポイントなど"
           value={playerData.profile}
           onChange={(e) => handleInputChange("profile", e.target.value)}
-          className="bg-[#14090F] border-gray-600 text-white placeholder-gray-400 min-h-[120px]"
+          className={dashboardSystem.inputs.textarea}
         />
       </div>
 
-      <div className="space-y-2">
-        <Label className="text-white">画像</Label>
-        <Card className="bg-[#14090F] border-gray-600 border-dashed">
+      <div className={dashboardSystem.layouts.form.field}>
+        <Label className={dashboardSystem.labels.default}>画像</Label>
+        <Card className={`${dashboardSystem.cards.form} border-dashed`}>
           <CardContent className="p-8">
             <div className="text-center">
               <input
@@ -110,7 +111,7 @@ export default function PlayerForm() {
                 <p className="text-pink-500 mb-2">
                   クリックしてアップロード またはドラッグ&ドロップ
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className={`${dashboardSystem.typography.description} text-sm`}>
                   PNG, JPG, GIF (最大 5MB)
                 </p>
               </label>
@@ -124,18 +125,18 @@ export default function PlayerForm() {
         </Card>
       </div>
 
-      <div className="flex space-x-4 pt-4">
+      <div className={dashboardSystem.layouts.form.actions}>
         <Button
           type="button"
           variant="outline"
           onClick={handlePreview}
-          className="bg-gray-700 border-gray-600 text-white hover:bg-gray-600"
+          className={dashboardSystem.buttons.secondary}
         >
           プレビュー
         </Button>
         <Button
           type="submit"
-          className="bg-pink-500 hover:bg-pink-600 text-white"
+          className={dashboardSystem.buttons.primary}
         >
           更新する
         </Button>

@@ -2,19 +2,20 @@ import { Plus, Users, TrendingUp } from "lucide-react";
 import { Button } from "~/ui/button";
 import RecentMatches from "./recent-matches";
 import StatsCard from "./stats-card";
+import { dashboardSystem, createDashboardGrid } from "~/design-system";
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-8">
+    <div className={dashboardSystem.layouts.main.section}>
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-        <Button className="bg-pink-500 hover:bg-pink-600 text-white">
+        <h1 className={dashboardSystem.typography.pageTitle}>Dashboard</h1>
+        <Button className={dashboardSystem.buttons.primary}>
           <Plus className="w-4 h-4 mr-2" />
           New Match
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className={createDashboardGrid({ cols: 3, gap: "lg" })}>
         <StatsCard
           title="Total Players"
           value="25"

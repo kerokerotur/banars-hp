@@ -1,5 +1,6 @@
 import type React from "react";
 import { Card, CardContent } from "~/ui/card";
+import { dashboardSystem } from "~/design-system";
 
 interface StatsCardProps {
   title: string;
@@ -9,12 +10,12 @@ interface StatsCardProps {
 
 export default function StatsCard({ title, value, icon }: StatsCardProps) {
   return (
-    <Card className="bg-[#2A1420] border-pink-900/50">
+    <Card className={dashboardSystem.cards.stats}>
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-gray-400 text-sm font-medium">{title}</p>
-            <p className="text-3xl font-bold text-white mt-2">{value}</p>
+            <p className={dashboardSystem.typography.statLabel}>{title}</p>
+            <p className={`${dashboardSystem.typography.statValue} mt-2`}>{value}</p>
           </div>
           <div className="flex-shrink-0">{icon}</div>
         </div>
