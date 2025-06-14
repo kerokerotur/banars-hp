@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { forwardRef } from "react"
+import { forwardRef } from "react";
 
-interface FormTextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  label: string
-  error?: string
+interface FormTextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label: string;
+  error?: string;
 }
 
 const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
@@ -21,10 +22,10 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
         />
         {error && <p className="text-red-400 text-sm">{error}</p>}
       </div>
-    )
-  },
-)
+    );
+  }
+);
 
-FormTextarea.displayName = "FormTextarea"
+FormTextarea.displayName = "FormTextarea";
 
-export default FormTextarea
+export default FormTextarea;

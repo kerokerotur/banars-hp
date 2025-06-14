@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Twitter, Facebook, Instagram } from "lucide-react"
+import { Twitter, Facebook, Instagram } from "lucide-react";
 
 interface FooterProps {
-  onSocialClick?: (platform: string) => void
-  onLinkClick?: (link: string) => void
+  onSocialClick?: (platform: string) => void;
+  onLinkClick?: (link: string) => void;
 }
 
 export default function Footer({ onSocialClick, onLinkClick }: FooterProps) {
@@ -12,13 +12,13 @@ export default function Footer({ onSocialClick, onLinkClick }: FooterProps) {
     { label: "Privacy Policy", value: "privacy" },
     { label: "Terms of Service", value: "terms" },
     { label: "Contact Us", value: "contact" },
-  ]
+  ];
 
   const socialPlatforms = [
     { icon: Twitter, name: "twitter" },
     { icon: Facebook, name: "facebook" },
     { icon: Instagram, name: "instagram" },
-  ]
+  ];
 
   return (
     <footer className="bg-[#1A0B13] text-white py-8 px-4 border-t border-gray-800">
@@ -49,8 +49,10 @@ export default function Footer({ onSocialClick, onLinkClick }: FooterProps) {
           </div>
         </div>
 
-        <div className="text-center text-gray-400 text-sm">© 2024 Banars Baseball Club. All rights reserved.</div>
+        <div className="text-center text-gray-400 text-sm">
+          © 2024 Banars Baseball Club. All rights reserved.
+        </div>
       </div>
     </footer>
-  )
+  );
 }

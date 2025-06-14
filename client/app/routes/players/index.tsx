@@ -10,14 +10,17 @@ export function meta({}: Route.MetaArgs) {
       content:
         "Discover the talented players of Banars Baseball Club. Learn more about their skills, positions, and contributions to the team.",
     },
-    { name: "keywords", content: "バナーズ, 野球, ホーム, チーム, プロフィール" },
+    {
+      name: "keywords",
+      content: "バナーズ, 野球, ホーム, チーム, プロフィール",
+    },
   ];
 }
 
 const serverUrl = process.env.SERVER_URL || "http://localhost:8787";
 
 export async function loader() {
-  const endpoint = `${serverUrl}/players`
+  const endpoint = `${serverUrl}/players`;
 
   const response = await fetch(endpoint);
   if (!response.ok) {

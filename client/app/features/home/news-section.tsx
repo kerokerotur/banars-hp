@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import  { Button } from "~/ui/button"
+import { Button } from "~/ui/button";
 // import { Button } from "~/ui/button"
-import NewsCard from "./news-card"
+import NewsCard from "./news-card";
 
 interface NewsSectionProps {
-  onViewAllNews?: () => void
-  onReadMore?: (newsId: string) => void
+  onViewAllNews?: () => void;
+  onReadMore?: (newsId: string) => void;
 }
 
-export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionProps) {
+export default function NewsSection({
+  onViewAllNews,
+  onReadMore,
+}: NewsSectionProps) {
   const newsItems = [
     {
       id: "1",
@@ -35,7 +38,7 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
         "The Banars completed a successful spring training camp, focusing on skill development and team building.",
       imageUrl: "/プライドジャパン1回戦_250531_3.jpg",
     },
-  ]
+  ];
 
   return (
     <section className="bg-[#1A0B13] text-white py-16 px-4">
@@ -66,5 +69,5 @@ export default function NewsSection({ onViewAllNews, onReadMore }: NewsSectionPr
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,21 +1,24 @@
-"use client"
+"use client";
 
-import GameResultBadge from "./game-result-badge"
+import GameResultBadge from "./game-result-badge";
 
 export interface GameResult {
-  id: string
-  date: string
-  opponent: string
-  result: "win" | "loss"
-  score: string
+  id: string;
+  date: string;
+  opponent: string;
+  result: "win" | "loss";
+  score: string;
 }
 
 interface GameResultsTableProps {
-  games: GameResult[]
-  onGameClick?: (gameId: string) => void
+  games: GameResult[];
+  onGameClick?: (gameId: string) => void;
 }
 
-export default function GameResultsTable({ games, onGameClick }: GameResultsTableProps) {
+export default function GameResultsTable({
+  games,
+  onGameClick,
+}: GameResultsTableProps) {
   return (
     <div className="bg-[#2C1220] rounded-lg overflow-hidden">
       <div className="grid grid-cols-4 gap-4 p-4 bg-[#341827] text-gray-300 text-sm font-medium">
@@ -42,5 +45,5 @@ export default function GameResultsTable({ games, onGameClick }: GameResultsTabl
         ))}
       </div>
     </div>
-  )
+  );
 }

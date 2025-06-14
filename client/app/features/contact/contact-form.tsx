@@ -1,85 +1,92 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import FormInput from "./form-input"
-import FormTextarea from "./form-textarea"
-import { Button } from "~/ui/button"
+import { useState } from "react";
+import FormInput from "./form-input";
+import FormTextarea from "./form-textarea";
+import { Button } from "~/ui/button";
 
 interface ContactFormData {
-  name: string
-  email: string
-  subject: string
-  message: string
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 interface ContactFormProps {
-  onSubmit?: (data: ContactFormData) => void
-  isLoading?: boolean
+  onSubmit?: (data: ContactFormData) => void;
+  isLoading?: boolean;
 }
 
-export default function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
+export default function ContactForm({
+  onSubmit,
+  isLoading = false,
+}: ContactFormProps) {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [errors, setErrors] = useState<Partial<ContactFormData>>({})
+  const [errors, setErrors] = useState<Partial<ContactFormData>>({});
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<ContactFormData> = {}
+    const newErrors: Partial<ContactFormData> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address"
+      newErrors.email = "Please enter a valid email address";
     }
 
     if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required"
+      newErrors.subject = "Subject is required";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required"
+      newErrors.message = "Message is required";
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (validateForm()) {
-      onSubmit?.(formData)
+      onSubmit?.(formData);
     }
-  }
+  };
 
   const handleInputChange =
-    (field: keyof ContactFormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    (field: keyof ContactFormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormData((prev) => ({
         ...prev,
         [field]: e.target.value,
-      }))
+      }));
 
       // Clear error when user starts typing
       if (errors[field]) {
         setErrors((prev) => ({
           ...prev,
           [field]: undefined,
-        }))
+        }));
       }
-    }
-    
+    };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 rounded-xl max-w-2xl mx-auto bg-[#23101A] p-8 shadow-2xl">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 rounded-xl max-w-2xl mx-auto bg-[#23101A] p-8 shadow-2xl"
+    >
       <FormInput
         label="Name"
         placeholder="Your Name"
@@ -126,5 +133,5 @@ export default function ContactForm({ onSubmit, isLoading = false }: ContactForm
         {isLoading ? "Sending..." : "Send Message"}
       </Button>
     </form>
-  )
+  );
 }

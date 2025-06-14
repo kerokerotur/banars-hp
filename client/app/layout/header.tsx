@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { NavLink } from "react-router"
-import { Button } from "~/ui/button"
+import { NavLink } from "react-router";
+import { Button } from "~/ui/button";
 
 interface HeaderProps {
-  onNavigate?: (section: string) => void
-  onJoinUs?: () => void
+  onNavigate?: (section: string) => void;
+  onJoinUs?: () => void;
 }
 
 export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
@@ -14,7 +14,7 @@ export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
     { label: "Players", value: "/players" },
     { label: "GameResult", value: "/game-results" },
     { label: "Contact", value: "/contact" },
-  ]
+  ];
 
   return (
     <header className="bg-[#1A0B13] text-white px-4 py-4">
@@ -34,10 +34,13 @@ export default function Header({ onNavigate, onJoinUs }: HeaderProps) {
           ))}
         </nav>
 
-        <Button onClick={onJoinUs} className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-md">
+        <Button
+          onClick={onJoinUs}
+          className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-md"
+        >
           Join Us
         </Button>
       </div>
     </header>
-  )
+  );
 }

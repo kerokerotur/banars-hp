@@ -6,9 +6,13 @@ export function meta({}: Route.MetaArgs) {
     { title: "バナーズお問い合わせ - ご連絡はこちら" },
     {
       name: "description",
-      content: "バナーズ野球クラブへのお問い合わせはこちらから。チーム情報やイベントについての質問をお待ちしています。",
+      content:
+        "バナーズ野球クラブへのお問い合わせはこちらから。チーム情報やイベントについての質問をお待ちしています。",
     },
-    { name: "keywords", content: "バナーズ, 野球, お問い合わせ, チーム, イベント" },
+    {
+      name: "keywords",
+      content: "バナーズ, 野球, お問い合わせ, チーム, イベント",
+    },
   ];
 }
 

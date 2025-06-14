@@ -1,24 +1,30 @@
-import { Button } from "~/ui/button"
+import { Button } from "~/ui/button";
 
 export interface Player {
-  id: number
-  player_name: string
-  nameJapanese?: string
-  position: string
-  uniform_bumber: number,
-  positionJapanese?: string
-  imageUrl?: string
+  id: number;
+  player_name: string;
+  nameJapanese?: string;
+  position: string;
+  uniform_bumber: number;
+  positionJapanese?: string;
+  imageUrl?: string;
 }
 
 interface PlayerCardProps {
-  player: Player
-  onViewProfile?: (playerId: string) => void
-  className?: string
+  player: Player;
+  onViewProfile?: (playerId: string) => void;
+  className?: string;
 }
 
-export default function PlayerCard({ player, onViewProfile, className = "" }: PlayerCardProps) {
+export default function PlayerCard({
+  player,
+  onViewProfile,
+  className = "",
+}: PlayerCardProps) {
   return (
-    <div className={`bg-[#2C1220] rounded-lg p-6 hover:bg-gray-750 transition-colors ${className}`}>
+    <div
+      className={`bg-[#2C1220] rounded-lg p-6 hover:bg-gray-750 transition-colors ${className}`}
+    >
       <div className="flex items-center gap-4 mb-4">
         <div className="relative">
           <img
@@ -29,8 +35,12 @@ export default function PlayerCard({ player, onViewProfile, className = "" }: Pl
         </div>
 
         <div className="flex-1">
-          <h3 className="text-white text-lg font-semibold mb-1">{player.nameJapanese || player.player_name}</h3>
-          <p className="text-gray-400 text-sm">{player.positionJapanese || player.position}</p>
+          <h3 className="text-white text-lg font-semibold mb-1">
+            {player.nameJapanese || player.player_name}
+          </h3>
+          <p className="text-gray-400 text-sm">
+            {player.positionJapanese || player.position}
+          </p>
         </div>
       </div>
 
@@ -41,5 +51,5 @@ export default function PlayerCard({ player, onViewProfile, className = "" }: Pl
         プロフィールを見る
       </Button>
     </div>
-  )
+  );
 }

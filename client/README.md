@@ -40,5 +40,3 @@ pnpm build
 ## デプロイ
 
 ### Vercel
-
-
