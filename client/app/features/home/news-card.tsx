@@ -2,6 +2,7 @@
 
 import { Button } from "~/ui/button";
 import { Card, CardContent, CardFooter } from "~/ui/card";
+import { designSystem } from "~/design-system";
 
 interface NewsCardProps {
   date: string;
@@ -19,7 +20,7 @@ export default function NewsCard({
   onReadMore,
 }: NewsCardProps) {
   return (
-    <Card className="bg-[#2C1220] border-[#3A1A2C] text-white overflow-hidden">
+    <Card className={designSystem.cards.news}>
       <div className="aspect-video bg-gray-700">
         <img
           src={imageUrl || "/placeholder.svg"}
@@ -28,15 +29,17 @@ export default function NewsCard({
         />
       </div>
       <CardContent className="p-6">
-        <p className="text-pink-400 text-sm mb-2">{date}</p>
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
+        <p className={`${designSystem.typography.accent} text-sm mb-2`}>
+          {date}
+        </p>
+        <h3 className={designSystem.typography.cardTitle}>{title}</h3>
         <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
       </CardContent>
       <CardFooter className="p-6 pt-0">
         <Button
           variant="link"
           onClick={onReadMore}
-          className="text-pink-400 hover:text-pink-300 p-0 h-auto font-normal"
+          className={designSystem.buttons.link}
         >
           Read More →
         </Button>

@@ -1,8 +1,13 @@
 "use client";
 
 import { Button } from "~/ui/button";
-// import { Button } from "~/ui/button"
 import NewsCard from "./news-card";
+import {
+  designSystem,
+  createSection,
+  createContainer,
+  createGrid,
+} from "~/design-system";
 
 interface NewsSectionProps {
   onViewAllNews?: () => void;
@@ -41,11 +46,13 @@ export default function NewsSection({
   ];
 
   return (
-    <section className="bg-[#1A0B13] text-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">Latest News</h2>
+    <section
+      className={createSection({ background: "primary", padding: "lg" })}
+    >
+      <div className={createContainer("xl")}>
+        <h2 className={designSystem.typography.heading}>Latest News</h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className={`${createGrid({ cols: 3, gap: "lg" })} mb-12`}>
           {newsItems.map((item) => (
             <NewsCard
               key={item.id}
@@ -61,7 +68,7 @@ export default function NewsSection({
         <div className="text-center">
           <Button
             onClick={onViewAllNews}
-            className="border-pink-600 text-pink-400 hover:bg-pink-600 hover:text-white px-8 py-3"
+            className={designSystem.buttons.secondary + " px-8 py-3"}
           >
             View All News
           </Button>
