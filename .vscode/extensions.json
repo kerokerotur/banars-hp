@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    // 必須拡張機能
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    
+    // React/TypeScript開発支援
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-json",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    
+    // 開発効率向上
+    "ms-vscode.vscode-npm-script",
+    "christian-kohler.npm-intellisense",
+    "ms-vscode.atom-keybindings",
+    
+    // Git関連
+    "eamodio.gitlens",
+    
+    // その他便利な拡張機能
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    "ms-vscode.hexeditor"
+  ]
+}
