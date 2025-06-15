@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "~/ui/button";
-import { Card, CardContent, CardFooter } from "~/ui/card";
+import { Button } from "@project/common/ui/button";
+import { Card, CardContent, CardFooter } from "@project/common/ui/card";
 import { designSystem } from "~/design-system";
 
 interface NewsCardProps {

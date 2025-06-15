@@ -1,5 +1,5 @@
 import type React from "react";
-import { Card, CardContent } from "~/ui/card";
+import { Card, CardContent } from "@project/common/ui/card";
 import { dashboardSystem } from "~/design-system";
 
 interface StatsCardProps {

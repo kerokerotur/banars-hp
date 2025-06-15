@@ -1,5 +1,5 @@
-import { Badge } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "~/ui/card";
+import { Badge } from "@project/common/ui/badge";
+import { Card, CardHeader, CardTitle, CardContent } from "@project/common/ui/card";
 
 const matches = [
   {

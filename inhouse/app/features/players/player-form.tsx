@@ -5,10 +5,10 @@ import type React from "react";
 import { useState } from "react";
 import { ImageIcon } from "lucide-react";
 import { Label } from "@radix-ui/react-label";
-import { Button } from "~/ui/button";
-import { Card, CardContent } from "~/ui/card";
-import { Input } from "~/ui/input";
-import { Textarea } from "~/ui/textarea";
+import { Button } from "@project/common/ui/button";
+import { Card, CardContent } from "@project/common/ui/card";
+import { Input } from "@project/common/ui/input";
+import { Textarea } from "@project/common/ui/textarea";
 import { dashboardSystem } from "~/design-system";
 
 export default function PlayerForm() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "~/ui/button";
+import { Button } from "@project/common/ui/button";
 import { designSystem, createContainer } from "~/design-system";
 
 interface HeroSectionProps {

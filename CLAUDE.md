@@ -260,6 +260,7 @@ INSERT INTO player VALUES
 - 依存関係の変更は`package.json`と`pnpm-lock.yaml`のみコミット
 - **コミットメッセージ**: 日本語で記述する
 - **すべてのメッセージ**: 日本語で統一する
+- **タスク完了後**: 必ずCLAUDE.mdの更新が必要かどうかを確認する
 
 ## エディタ設定（VS Code）
 
@@ -355,20 +356,20 @@ packages:
 ```json
 {
   "name": "@project/common",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
     },
     "./ui/*": {
-      "types": "./ui/*.tsx",
-      "default": "./ui/*.tsx"
+      "types": "./build/ui/*.d.ts",
+      "default": "./build/ui/*.js"
     },
     "./lib/*": {
-      "types": "./lib/*.ts",
-      "default": "./lib/*.ts"
+      "types": "./build/lib/*.d.ts",
+      "default": "./build/lib/*.js"
     }
   }
 }
@@ -400,6 +401,167 @@ packages:
     }
   }
 }
+```
+
+## 動作確認手順
+
+### Common パッケージの修正後の完了条件
+
+Common パッケージに修正を加えた場合は、以下の手順で動作確認を行うこと：
+
+#### 1. Common パッケージのビルド確認
+```bash
+cd common
+pnpm run clean && pnpm run build
+```
+
+#### 2. Client アプリケーションのビルド確認
+```bash
+cd ../client
+pnpm run typecheck
+pnpm run build:dev
+```
+
+#### 3. Inhouse アプリケーションのビルド確認
+```bash
+cd ../inhouse
+pnpm run typecheck
+pnpm run build:dev
+```
+
+#### 4. 完了条件
+- ✅ Common パッケージのビルドが成功すること
+- ✅ Client の TypeScript チェックが通ること
+- ✅ Client のビルドが正常に完了すること
+- ✅ Inhouse の TypeScript チェックが通ること
+- ✅ Inhouse のビルドが正常に完了すること
+
+### Common パッケージのビルド構成
+
+#### ビルド成果物の配置
+```
+common/
+├── ui/           # ソースファイル
+├── lib/          # ソースファイル
+└── build/        # ビルド成果物ディレクトリ
+    ├── ui/       # UIコンポーネントのJS/型定義
+    ├── lib/      # ユーティリティのJS/型定義
+    └── index.js  # メインエントリポイント
+```
+
+## タスク完了後の必須確認事項
+
+### CLAUDE.md更新チェック
+
+**重要**: 何らかのタスクを完了した後は、必ずCLAUDE.mdの更新が必要かどうかを確認すること。
+
+#### 更新が必要なケース
+
+1. **新しいパッケージやディレクトリの追加**
+   - 新しいworkspaceパッケージの作成
+   - 新しい機能ディレクトリの追加
+   - ディレクトリ構成の変更
+
+2. **ビルド設定やコマンドの変更**
+   - package.jsonのscriptsの追加・変更
+   - ビルド設定の変更（tsconfig.json、vite.config.ts等）
+   - 新しい開発・デプロイコマンドの追加
+
+3. **技術スタックの変更**
+   - 新しいライブラリやフレームワークの採用
+   - 既存技術の大幅なバージョンアップ
+   - アーキテクチャの変更
+
+4. **開発ワークフローの変更**
+   - 新しい開発手順の確立
+   - 環境設定の変更
+   - CI/CDパイプラインの変更
+
+5. **APIエンドポイントやデータベース構造の変更**
+   - 新しいAPIエンドポイントの追加
+   - データベーススキーマの変更
+   - 環境変数の追加・変更
+
+#### 確認手順
+
+```bash
+# タスク完了後の確認フロー
+1. 実装したタスクの内容を振り返る
+2. 上記の「更新が必要なケース」に該当するかチェック
+3. 該当する場合はCLAUDE.mdの該当セクションを更新
+4. 更新内容を次回の開発者が理解できるよう明確に記載
+```
+
+#### 更新時の注意事項
+
+- **具体的に記載**: 抽象的でなく、実際のコマンドやファイルパスを含める
+- **例を含める**: 使用方法の具体例を提供する
+- **理由を説明**: なぜその変更が必要だったかの背景を記載
+- **関連する他のセクション**: 影響を受ける他の部分も同時に更新する
+
+#### 更新例
+
+```markdown
+<!-- 例: 新しいビルドコマンドを追加した場合 -->
+
+### ビルドコマンド（更新）
+
+#### 新規追加
+- `pnpm build:watch` - ファイル変更を監視してビルド
+- `pnpm analyze` - バンドルサイズの分析
+
+#### 使用例
+```bash
+# 開発中の自動ビルド
+pnpm build:watch
+
+# 本番デプロイ前のサイズ確認
+pnpm analyze
+```
+
+#### 背景
+CI/CDパイプラインでのビルド時間短縮のため、
+監視モードとバンドル分析機能を追加。
+```
+
+### CLAUDE.md更新の重要性
+
+- **開発効率**: 次回の開発時に迷わない
+- **知識の継承**: チーム内での情報共有
+- **AI支援の精度向上**: Claude等のAIが正確な支援を提供
+- **プロジェクトの保守性**: 長期的な保守・運用の支援
+
+#### Package.json exports設定
+```json
+{
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./ui/*": {
+      "types": "./build/ui/*.d.ts",
+      "default": "./build/ui/*.js"
+    },
+    "./lib/*": {
+      "types": "./build/lib/*.d.ts",
+      "default": "./build/lib/*.js"
+    }
+  }
+}
+```
+
+#### Import方法
+```typescript
+// Client/Inhouse からのインポート
+import { Button } from "@project/common/ui/button";
+import { cn } from "@project/common/lib/utils";
+
+// 実際の参照先
+// @project/common/ui/button → common/build/ui/button.js
+// @project/common/lib/utils → common/build/lib/utils.js
 ```
 
 #### 4. インポート方法

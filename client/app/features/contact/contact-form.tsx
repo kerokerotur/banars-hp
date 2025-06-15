@@ -5,7 +5,7 @@ import type React from "react";
 import { useState } from "react";
 import FormInput from "./form-input";
 import FormTextarea from "./form-textarea";
-import { Button } from "~/ui/button";
+import { Button } from "@project/common/ui/button";
 
 interface ContactFormData {
   name: string;

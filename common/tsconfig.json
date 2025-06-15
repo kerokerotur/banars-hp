@@ -4,7 +4,7 @@
     "noEmit": false,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "./lib",
+    "outDir": "./build",
     "rootDir": "./",
     "baseUrl": ".",
     "paths": {
@@ -15,5 +15,5 @@
     "skipLibCheck": true
   },
   "include": ["**/*.ts", "**/*.tsx", "index.ts"],
-  "exclude": ["node_modules", "lib", "**/*.test.ts", "**/*.test.tsx"]
+  "exclude": ["node_modules", "build", "**/*.test.ts", "**/*.test.tsx"]
 }

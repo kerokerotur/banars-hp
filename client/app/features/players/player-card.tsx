@@ -1,4 +1,4 @@
-import { Button } from "~/ui/button";
+import { Button } from "@project/common";
 
 export interface Player {
   id: number;

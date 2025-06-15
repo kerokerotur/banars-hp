@@ -1,5 +1,5 @@
 import { Plus, Users, TrendingUp } from "lucide-react";
-import { Button } from "~/ui/button";
+import { Button } from "@project/common/ui/button";
 import RecentMatches from "./recent-matches";
 import StatsCard from "./stats-card";
 import { dashboardSystem, createDashboardGrid } from "~/design-system";

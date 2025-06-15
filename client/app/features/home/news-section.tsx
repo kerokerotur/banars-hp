@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "~/ui/button";
+import { Button } from "@project/common/ui/button";
 import NewsCard from "./news-card";
 import {
   designSystem,

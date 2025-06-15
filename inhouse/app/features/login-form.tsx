@@ -6,15 +6,15 @@ import { useState } from "react";
 import { Mail, Lock } from "lucide-react";
 import Link from "next/link";
 import { Label } from "@radix-ui/react-label";
-import { Button } from "~/ui/button";
-import { Input } from "~/ui/input";
+import { Button } from "@project/common/ui/button";
+import { Input } from "@project/common/ui/input";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "~/ui/card";
+} from "@project/common/ui/card";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");

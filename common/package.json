@@ -2,20 +2,20 @@
   "name": "@project/common",
   "version": "1.0.0",
   "description": "共有UIコンポーネントとユーティリティ",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
     },
     "./ui/*": {
-      "types": "./ui/*.tsx",
-      "default": "./ui/*.tsx"
+      "types": "./build/ui/*.d.ts",
+      "default": "./build/ui/*.js"
     },
     "./lib/*": {
-      "types": "./lib/*.ts",
-      "default": "./lib/*.ts"
+      "types": "./build/lib/*.d.ts",
+      "default": "./build/lib/*.js"
     }
   },
   "scripts": {
@@ -26,7 +26,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
     "lint": "eslint . --fix --ext .ts,.tsx,.js,.jsx",
     "lint:check": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "clean": "rm -rf lib node_modules/.cache"
+    "clean": "rm -rf build node_modules/.cache"
   },
   "keywords": [],
   "author": "",
