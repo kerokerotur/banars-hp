@@ -54,7 +54,7 @@
   "files.exclude": {
     "**/node_modules": true,
     "**/dist": true,
-    "**/build": true,
+    // "**/build": true,  // ビルド結果確認のため一時的にコメントアウト
     "**/.next": true,
     "**/.react-router": true
   },
