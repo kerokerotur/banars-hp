@@ -1,5 +1,11 @@
 # サーバー開発手順
 
+## 実行環境について
+
+`server` ディレクトリのコードは Cloudflare Workers 上で動作することを前提に実装されています。Workers ランタイムでは `URL` や `Response` をはじめとする Web API、さらに `fetch` などのグローバル関数が自動で提供され、`ExportedHandler<Env>` 形式でエントリーポイントをエクスポートします。環境変数やバインディング（D1 データベースなど）は Wrangler が生成する `worker-configuration.d.ts` 内の `Env` インターフェースで型付けされており、`fetch` ハンドラーの第 2 引数から参照します。
+
+ローカル開発時も `pnpm dev` で `wrangler dev` が立ち上がるため、実際の Workers ランタイムと同じグローバル／環境変数の挙動で確認できます。新しい環境変数やバインディングを追加した場合は `pnpm cf-typegen` を実行して `worker-configuration.d.ts` を再生成し、型情報とランタイムの定義を同期させてください。
+
 ## ローカル開発
 
 サーバーをローカルで起動する手順:

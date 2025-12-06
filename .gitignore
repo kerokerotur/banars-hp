@@ -54,6 +54,7 @@ Thumbs.db
 
 # Optional npm cache directory
 .npm
+.pnpm-home
 
 # Optional REPL history
 .node_repl_history
